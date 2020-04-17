@@ -1,32 +1,27 @@
 package entities;
 
+import interfaces.OnInteractionListener;
 import items.Armor;
 import items.Inventory;
 import items.Weapon;
 
-public class Hero {
-	private int HP, MP;
-	private Inventory inventory;
-	private Weapon weapon;
-	private Armor armor;
+public class Hero extends Human {
 	
-	public Hero() {
-		this.HP = 100;
-		this.MP = 100;
-		this.inventory = new Inventory();
+	public Hero(String name) {
+		super(name);
 	}
 	
 	public int getGold() { return inventory.getGold(); }
 	
-	public int getAttack() {
-		return 5;
-	}
 	
-	public void equipWeapon(Weapon weapon) {
-		this.weapon = weapon;
+	@Override
+	public int onAttackDamage() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
-	
-	public void equipArmor(Armor armor) {
-		this.armor = armor;
+
+	@Override
+	public boolean onDefend(OnInteractionListener attacker) {
+		return false;
 	}
 }

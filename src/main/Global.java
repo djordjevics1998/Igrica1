@@ -3,5 +3,5 @@ package main;
 import java.util.Random;
 
 public class Global {
-	public static Random r = new Random();
+	public static final Random r = new Random();
 }

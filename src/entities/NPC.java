@@ -1,23 +1,25 @@
 package entities;
 
+import interfaces.OnInteractionListener;
 import items.Armor;
 import items.Weapon;
 
-public class NPC {
-	private int HP, MP;
-	private Weapon weapon;
-	private Armor armor;
+public class NPC extends Human {
 	
-	public NPC() {
-		HP = 100;
-		MP = 100;
+	public NPC(String name) {
+		super(name);
 	}
-	
-	public void equipWeapon(Weapon weapon) {
-		this.weapon = weapon;
+
+
+	@Override
+	public int onAttackDamage() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
-	
-	public void equipArmor(Armor armor) {
-		this.armor = armor;
+
+	@Override
+	public boolean onDefend(OnInteractionListener attacker) {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }
