@@ -3,12 +3,13 @@ package items;
 import main.Global;
 
 public class Weapon extends Item {
-	public static final Weapon IMPERIAL_SWORD = new Weapon(10, 19, 0, 1),
-			WOODCUTTER_AXE = new Weapon(5, 8, 0.35, 4.5);
+	public static final Weapon IMPERIAL_SWORD = new Weapon("Imperial sword", 10, 19, 0, 1),
+			WOODCUTTER_AXE = new Weapon("Woodcutter axe", 5, 8, 0.35, 4.5);
 	private int dmg_min, dmg_max;
 	private double crit_chance, crit_mult;
 	
-	public Weapon(int dmg_min, int dmg_max, double crit_chance, double crit_mult) {
+	public Weapon(String name, int dmg_min, int dmg_max, double crit_chance, double crit_mult) {
+		super(name);
 		this.dmg_min = dmg_min;
 		this.dmg_max = dmg_max;
 		this.crit_chance = crit_chance;

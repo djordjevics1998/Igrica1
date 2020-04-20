@@ -1,11 +1,12 @@
 package entities;
 
+import interfaces.OnFightListener;
 import interfaces.OnInteractionListener;
 import items.Armor;
 import items.Inventory;
 import items.Weapon;
 
-public abstract class Human implements OnInteractionListener {
+public abstract class Human implements OnFightListener {
 	protected int HP, MP;
 	protected Inventory inventory;
 	protected Weapon weapon;

@@ -1,10 +1,14 @@
 package nivoi;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 import java.util.Scanner;
 
 import entities.Hero;
 import entities.NPC;
+import interfaces.OnFightListener;
+import items.Armor;
 import items.Weapon;
 import main.Meni;
 
@@ -19,10 +23,10 @@ public class Nivo1 {
 	public void start() {
 		String str;
 		while(true) {
-			hero = new Hero();
-			NPC guard = new NPC();
+			hero = new Hero("Dusan");
+			NPC guard = new NPC("Imperial guard");
 			guard.equipWeapon(Weapon.IMPERIAL_SWORD);
-			//guard.equipArmor(Armor.IMPERIAL_ARMOR);*/
+			guard.equipArmor(Armor.IMPERIAL_ARMOR);
 			System.out.println("Sensei: Hey, you, you are finally awake");
 			scanner.nextLine();
 			System.out.println("Sensei: Last night was truly exciting, wasn't it?");
@@ -70,7 +74,14 @@ public class Nivo1 {
 				break;
 			}
 			scanner.nextLine();
-			System.out.println("");
+			ArrayList<OnFightListener> enemies = new ArrayList<OnFightListener>();
+			enemies.add(guard);
+			NPC npc2 = new NPC("Pera");
+			npc2.equipWeapon(Weapon.WOODCUTTER_AXE);
+			npc2.equipArmor(Armor.RAGS);
+			enemies.add(npc2);
+			FightingArena fightingArena = new FightingArena(scanner, hero, enemies);
+			fightingArena.start();
 		}
 	}
 }

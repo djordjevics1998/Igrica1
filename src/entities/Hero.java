@@ -24,4 +24,16 @@ public class Hero extends Human {
 	public boolean onDefend(OnInteractionListener attacker) {
 		return false;
 	}
+
+	@Override
+	public String getName() {
+		// TODO Auto-generated method stub
+		return name;
+	}
+
+	@Override
+	public String overview() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }
