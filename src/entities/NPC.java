@@ -12,19 +12,6 @@ public class NPC extends Human {
 
 
 	@Override
-	public int onAttackDamage() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public boolean onDefend(OnInteractionListener attacker) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-
-
-	@Override
 	public String getName() {
 		// TODO Auto-generated method stub
 		return null;

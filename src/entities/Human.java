@@ -27,5 +27,24 @@ public abstract class Human implements OnFightListener {
 	public void equipArmor(Armor armor) {
 		this.armor = armor;
 	}
-
+	
+	@Override
+	public int onAttackDamage() {
+		return weapon.calculateAttack();
+	}
+	
+	@Override
+	public boolean onDefend(OnInteractionListener attacker) {
+		int damage = attacker.onAttackDamage();
+		HP = HP - damage;
+		return HP >= 0;
+	}
+	
+	public int getHP() {
+		return HP;
+	}
+	
+	public int getMP() {
+		return MP;
+	}
 }

@@ -24,6 +24,8 @@ public class Nivo1 {
 		String str;
 		while(true) {
 			hero = new Hero("Dusan");
+			hero.equipWeapon(Weapon.WOODCUTTER_AXE);
+			hero.equipArmor(Armor.RAGS);
 			NPC guard = new NPC("Imperial guard");
 			guard.equipWeapon(Weapon.IMPERIAL_SWORD);
 			guard.equipArmor(Armor.IMPERIAL_ARMOR);
@@ -76,12 +78,14 @@ public class Nivo1 {
 			scanner.nextLine();
 			ArrayList<OnFightListener> enemies = new ArrayList<OnFightListener>();
 			enemies.add(guard);
-			NPC npc2 = new NPC("Pera");
+			/*NPC npc2 = new NPC("Pera");
 			npc2.equipWeapon(Weapon.WOODCUTTER_AXE);
 			npc2.equipArmor(Armor.RAGS);
-			enemies.add(npc2);
+			enemies.add(npc2);*/
 			FightingArena fightingArena = new FightingArena(scanner, hero, enemies);
-			fightingArena.start();
+			boolean success = fightingArena.start();
+			if(success) System.out.println("WIN");
+			else System.out.println("GAME OVER");
 		}
 	}
 }

@@ -12,18 +12,6 @@ public class Hero extends Human {
 	}
 	
 	public int getGold() { return inventory.getGold(); }
-	
-	
-	@Override
-	public int onAttackDamage() {
-		// TODO Auto-generated method stub
-		return 0;
-	}
-
-	@Override
-	public boolean onDefend(OnInteractionListener attacker) {
-		return false;
-	}
 
 	@Override
 	public String getName() {
